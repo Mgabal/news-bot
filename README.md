@@ -1,129 +1,53 @@
-# 📰 Fashion & Music News Telegram Bot
+# 📰 Auto News Telegram Bot
 
-Auto-posts fashion and music news to your Telegram channel every 30 minutes.
-100% free — no paid APIs required.
-
----
-
-## ✨ Features
-
-- 🔄 Auto-posts every 30 minutes (configurable)
-- 📰 14 RSS sources — Vogue, Billboard, Hypebeast, Rolling Stone & more
-- 🤖 AI rewrites every post to sound natural (Groq free tier)
-- ✅ Never reposts the same article (SQLite deduplication)
-- 👗🎵 Covers Fashion + Music + Celebrity
-- 🛠 Admin commands: `/status` `/postnow` `/pause` `/resume` `/feeds`
-- ♻️ Easy to resell — swap feeds.py for any niche
+A smart Telegram bot that automatically finds and posts the latest **fashion & music news** to your channel — every 30 minutes, around the clock, without any effort from you.
 
 ---
 
-## 🚀 Setup (10 minutes)
+## ✨ What It Does
 
-### 1. Install
-```bash
-pip3 install -r requirements.txt
-```
-
-### 2. Create your Telegram bot
-- Message @BotFather on Telegram
-- Send `/newbot` → follow prompts → copy your token
-
-### 3. Create your Telegram channel
-- Create a public or private channel
-- Add your bot as an **administrator** with "Post messages" permission
-- Copy the channel username (e.g. `@fashionnewschannel`)
-
-### 4. Get your Telegram user ID
-- Message @userinfobot on Telegram
-- Copy your numeric ID (e.g. `123456789`)
-
-### 5. Get a free Groq API key (optional but recommended)
-- Go to console.groq.com
-- Sign up free — no credit card
-- Create an API key
-
-### 6. Configure
-```bash
-cp .env.example .env
-# Fill in TELEGRAM_TOKEN, TELEGRAM_CHANNEL_ID, ADMIN_USER_ID
-# Optionally add GROQ_API_KEY for AI rewriting
-```
-
-### 7. Run
-```bash
-python3 main.py
-```
-
-The bot starts, immediately fetches news, and posts to your channel. ✅
+- 🔄 Posts fresh news to your channel **automatically every 30 minutes**
+- 👗 Covers **fashion** — Vogue, Hypebeast, Harper's Bazaar, Elle, WWD and more
+- 🎵 Covers **music & celebrity** — Billboard, Rolling Stone, NME, Pitchfork and more
+- 🤖 Every post is **rewritten by AI** to sound natural and engaging — not copy-pasted
+- 🔁 **Never reposts** the same article twice
+- 🛠 Simple admin controls via Telegram chat
 
 ---
 
-## 🛠 Admin Commands
+## 📱 Your Admin Commands
+
+Once the bot is running, you control it by messaging it directly on Telegram:
 
 | Command | What it does |
 |---|---|
-| `/status` | Show stats — total posts, running state, feed count |
-| `/postnow` | Immediately fetch & post articles (don't wait 30 min) |
-| `/pause` | Stop auto-posting |
+| `/postnow` | Post new articles immediately (don't wait 30 min) |
+| `/status` | See how many articles have been posted and if it's running |
+| `/pause` | Temporarily stop auto-posting |
 | `/resume` | Resume auto-posting |
-| `/feeds` | List all active RSS feeds |
+| `/feeds` | See all news sources the bot pulls from |
 
 ---
 
-## 📁 Project Structure
+## 📡 News Sources
 
-```
-news-bot/
-├── main.py          # Entry point + scheduler + admin commands
-├── config.py        # Settings from .env
-├── requirements.txt
-├── .env.example
-├── bot/
-│   └── poster.py    # Posts to Telegram channel
-├── news/
-│   ├── fetcher.py   # Pulls & filters RSS feeds
-│   └── feeds.py     # All RSS URLs — edit to change niche
-├── ai/
-│   └── rewriter.py  # Groq AI rewrites articles → posts
-└── db/
-    └── models.py    # SQLite — tracks posted articles
-```
+**Fashion**
+- Vogue
+- Hypebeast
+- Harper's Bazaar
+- Elle
+- WWD (Women's Wear Daily)
+- Google News — Fashion & Luxury brands
 
+**Music & Celebrity**
+- Billboard
+- Rolling Stone
+- NME
+- Pitchfork
+- Google News — Music & Celebrity
+- 
 ---
 
-## 🔄 Reselling to Other Niches
+## 💬 Support
 
-To deliver this bot to a different client, only change **`news/feeds.py`**:
-
-| Client niche | What to swap |
-|---|---|
-| Sports news | ESPN, BBC Sport, Sky Sports RSS feeds |
-| Tech news | TechCrunch, Wired, The Verge RSS |
-| Crypto news | CoinDesk, CoinTelegraph RSS |
-| Food/lifestyle | Eater, Food52, Bon Appétit RSS |
-| Local news | Any local newspaper RSS |
-
-Same codebase. Different feeds. Done in 5 minutes per client.
-
----
-
-## ☁️ Deploy Free on Railway
-
-1. Push to GitHub (`git push`)
-2. Go to railway.app → New Project → Deploy from GitHub
-3. Add your `.env` variables in the Variables tab
-4. Deploy — runs 24/7 for free
-
----
-
-## 💰 Selling This Bot
-
-**Setup fee:** $150 – $350 per client
-**Monthly retainer:** $30 – $60/month (hosting + maintenance)
-
----
-
-## ⚠️ Note
-
-This bot reposts public news with source attribution and links back to the original articles.
-Always include source credits in posts (already done by default).
+Any questions or issues — message me directly. I'll make sure everything runs smoothly.
